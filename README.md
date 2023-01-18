@@ -28,3 +28,29 @@ Esta es la última fase y una de gran importancia junto con el CCF, ya que pondr
 ## Creacion fase IDC
 
 ¿¿PRINCIPALMETE COMO SE JUEGA AL BUSCAMINAS??
+
+El juego consiste en despejar todas las casillas de una pantalla que no oculten una mina.
+
+Algunas casillas tienen un número, este número indica las minas que son en todas las casillas circundantes. Así, si una casilla tiene el número 3, significa que de las ocho casillas que hay alrededor (si no es en una esquina o borde) hay 3 con minas y 5 sin minas. Si se descubre una casilla sin número indica que ninguna de las casillas vecinas tiene mina y estas se descubren automáticamente.
+
+Si se descubre una casilla con una mina se pierde la partida.
+
+Se puede poner una marca en las casillas que el jugador piensa que hay minas para ayudar a descubrir la que están cerca.
+
+Ahora lo explicaremos paso a paso.
+
+Primero cabe aclarar que le juego es de una persona contra la máquina.
+
+Paso Por Paso
+
+1. Se genera una tabla de (10x10), (20x20)... o tamaño que se escoja.
+
+2. Dentro de esta tabla se generan 10,20... minas que son las que tenemos que ubicar para ganar el juego.
+
+3. Una vez se nos ha generado la tabla ya podemos señalar la coordenada que queremos descubrir.
+
+4. Una vez la elegimos pueden suceder dos cosas a) es una mina lo cual perdemos el juego. b) nos descubre un número que hace 5. 5.referencia al número de minas que hay al rededor de esa coordenada en un rango de 1.
+
+5. Una vez pasado esto volveríamos a escoger una coordenada y volveríamos al paso 4.
+
+6. En caso de descubrir en qué coordenadas están todas las minas y tener todo el tablero al descubierto, ganaríamos el juego.
