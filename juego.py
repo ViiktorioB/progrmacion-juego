@@ -7,11 +7,14 @@
 # futuras versiones de podrian mejorar para introducir un menu el cual podamos seleccionar la dificultad del juego con tableros
 # mas grandes y a la vez con mas minas.
 
-# Primero crearemos la tabla de apoyo, esta tabla no la vera el jugador pero se mostrará en caso de perder
+# PASO 1: crearemos la tabla de apoyo, esta tabla no la vera el jugador pero se mostrará en caso de perder
 # para que pueda ver el lugar exacto de las minas, ES UN 10X10.
 #  0 = Sin Mina
 #  * = Con Mina
 
+import random
+
+# Este es el tablero digamos (limpio), tendremos que diseñar una funcion que sobreescriba una mina para poder inicar el juego.
 tablero_minas = [
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
@@ -24,5 +27,32 @@ tablero_minas = [
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0] ]
 
-print(tablero_minas)
+# Este sera el tablero que de verdad verá el jugador
+tablero_juego = [
+   ["X","X","X","X","X","X","X","X","X","X"],
+   ["X","X","X","X","X","X","X","X","X","X"],
+   ["X","X","X","X","X","X","X","X","X","X"], 
+   ["X","X","X","X","X","X","X","X","X","X"], 
+   ["X","X","X","X","X","X","X","X","X","X"], 
+   ["X","X","X","X","X","X","X","X","X","X"], 
+   ["X","X","X","X","X","X","X","X","X","X"], 
+   ["X","X","X","X","X","X","X","X","X","X"], 
+   ["X","X","X","X","X","X","X","X","X","X"], 
+   ["X","X","X","X","X","X","X","X","X","X"] ]
+
+# Una vez tenemos los tablero pasamos al sgn paso.
+
+# PASO 2: Agregar las minas al tablero para iniciar el juego en el caso de ser un 10X10 habrá 10 minas.
+
+n_minas = 10
+
+# Ahora lo que tenemos que conseguir es que nos inserte el numero de minas en lugares aleatorios /usaremos la libreria random/
+
+i = random.randint(0,9)
+j = random.randint(0,9)
+
+# Haremos que sobreescriba los valore que nos ha dado random.
+
+
+
 
