@@ -56,12 +56,52 @@ while n_minas_puestas < n_minas:
        tablero_minas[i][j] = 1
        n_minas_puestas = n_minas_puestas+1
 
+# Función que nos permite ver en que posición estan las minas. 
 def tablero_invisible():
     for i in range(0,10):
         for j in range(0,10):
             print(tablero_minas[i][j], end=" ")
         print("")
 
+# Funcion que usaremos para la partida
+# Este tablero sera el que se vera en la pantalla principalmente utiliza la lista tablero_juego, para 
+# mostras de forma mas grafica el tablero
+def tablero_partida():
+    n_fila = 1
+    print("     1   2   3   4   5   6   7   8   9   10")     # Este print marca la enumeración de cada columna
+    print("    ----------------------------------------")    # Marca la separación y mejora gráficamente las filas del tablero.
+    for i in range(0,10):
+        if n_fila != 10:                        # Al cambiar el digito a dos ej:10 se deplaza toda la estrucutra
+            print(n_fila," | ", end="")         # a la derecha una posicion, para que eso no pase esta este if. El cual los suprime.
+            n_fila = n_fila + 1
+        else:
+            n_fila==10
+            print(n_fila,"| ", end="")
+        for j in range(0,10):
+            if tablero_juego[i][j]=="X":        # 
+                print("·", end=" | ")
+            else:    
+                print(tablero_juego[i][j], end=" || ")
+        print("")
+        print("    ----------------------------------------")
+
 tablero_invisible()
+tablero_partida()
+
+# PASO 3: Eleccion de las cordenadas que quieres destapar.
+eleccion_cordenada = 0
+while eleccion_cordenada < (100 - n_minas):
+    i=int(input("Señala una fila del (1-10)"))
+    j=int(input("Señala una columna del (1-10)"))
+    if tablero_minas[i][j] == 1:
+        print("¡¡LA MINA HA EXPLOTADO!! Has Perdido.")
+        tablero_invisible
+    else:
+        tablero_juego[i][j]="destapar_celda"(i,j)  # Destapar celda sera la funcion que nos dara el numero de minas que hay al rededor.
+        tablero_partida
+
+
+
+
 
 
