@@ -42,17 +42,26 @@ tablero_juego = [
 
 # Una vez tenemos los tablero pasamos al sgn paso.
 
-# PASO 2: Agregar las minas al tablero para iniciar el juego en el caso de ser un 10X10 habrá 10 minas.
-
-n_minas = 10
-
-# Ahora lo que tenemos que conseguir es que nos inserte el numero de minas en lugares aleatorios /usaremos la libreria random/
-
-i = random.randint(0,9)
-j = random.randint(0,9)
+# PASO 2: Agregar las minas al tablero para iniciar el juego en el caso de ser un 10X10 habrá 20 minas.
+n_minas = 20
 
 # Haremos que sobreescriba los valore que nos ha dado random.
+n_minas_puestas = 0
+while n_minas_puestas < n_minas:
+# Ahora lo que tenemos que conseguir es que nos inserte el numero de minas en lugares aleatorios /usaremos la libreria random/
+    i = random.randint(0,9)
+    j = random.randint(0,9)
 
+    if tablero_minas[i][j] == 0:
+       tablero_minas[i][j] = 1
+       n_minas_puestas = n_minas_puestas+1
 
+def tablero_invisible():
+    for i in range(0,10):
+        for j in range(0,10):
+            print(tablero_minas[i][j], end=" ")
+        print("")
+
+tablero_invisible()
 
 
