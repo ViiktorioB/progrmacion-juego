@@ -7,7 +7,7 @@
 # futuras versiones de podrian mejorar para introducir un menu el cual podamos seleccionar la dificultad del juego con tableros
 # mas grandes y a la vez con mas minas.
 
-####### PASO 1: crearemos la tabla de apoyo, esta tabla no la vera el jugador pero se mostrará en caso de perder
+# PASO 1: crearemos la tabla de apoyo, esta tabla no la vera el jugador pero se mostrará en caso de perder
 # para que pueda ver el lugar exacto de las minas, ES UN 10X10.
 #  0 = Sin Mina
 #  * = Con Mina
@@ -27,7 +27,7 @@ tablero_minas = [
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0] ]
 
-# Este sera el tablero que de verdad verá el jugador
+# Este será el tablero que de verdad verá el jugador
 tablero_juego = [
    ["X","X","X","X","X","X","X","X","X","X"],
    ["X","X","X","X","X","X","X","X","X","X"],
@@ -40,12 +40,12 @@ tablero_juego = [
    ["X","X","X","X","X","X","X","X","X","X"], 
    ["X","X","X","X","X","X","X","X","X","X"] ]
 
-tablero_explosion = []
-tablero_explosion = tablero_minas
+tablero_explosion = []                          # Nos apoyamos en una lista auxiliar a la que le daremos un valor ya existente  
+tablero_explosion = tablero_minas               # para cuando el usuario pierda la partida, se le muestre por pantalla el tablero con las minas marcadas.
 
-# Una vez tenemos los tablero pasamos al sgn paso.
+# Una vez tenemos los tablero pasamos al siguiente paso.
 
-###### PASO 2: Agregar las minas al tablero para iniciar el juego en el caso de ser un 10X10 habrá 20 minas.
+# PASO 2: Agregar las minas al tablero para iniciar el juego en el caso de ser un 10X10 habrá 20 minas.
 n_minas = 20
 
 # Haremos que sobreescriba los valore que nos ha dado random.
@@ -67,10 +67,10 @@ def tablero_invisible():
         print("")
 
 
-# Funcion que usaremos para la partida
-# Este tablero sera el que se vera en la pantalla principalmente utiliza la lista tablero_juego, para 
-# mostras de forma mas grafica el tablero
 
+# Funcion que usaremos para la partida
+# Este tablero sera el que se vera en la pantalla, principalmente utiliza la lista tablero_juego, para 
+# mostrar de forma mas grafica el tablero
 def tablero_partida():
     n_fila = 1
     print("     1   2   3   4   5   6   7   8   9   10")     # Este print marca la enumeración de cada columna
@@ -89,7 +89,6 @@ def tablero_partida():
                 print(tablero_juego[i][j], end=" | ")
         print("")
         print("    ----------------------------------------")
-
 
 # Esta función es la que el usuario verá cuando pierda la partida(explote una mina), le mostrará por pantalla la ubicación de todas las minas
 # Utiliza como referencia la lista de tablero_minas. 
@@ -117,19 +116,17 @@ def tablero_derrota():
         print("")
         print("    ----------------------------------------")
 
+# Cartel de bievenida.
 print("")   
 print("██████╗░██╗░░░██╗░██████╗░█████╗░░█████╗░███╗░░░███╗██╗███╗░░██╗░█████╗░░██████╗")
 print("██╔══██╗██║░░░██║██╔════╝██╔══██╗██╔══██╗████╗░████║██║████╗░██║██╔══██╗██╔════╝")
-print("██████╦╝██║░░░██║╚█████╗░██║░░╚═╝███████║██╔████╔██║██║██╔██╗██║███████║╚█████╗░")
+print("██████╦╝██║░░░██║╚█████╗░██║░░╚═╝███████║██╔████╔██║██║██╔██╗██║███████║╚█████╗░")  
 print("██╔══██╗██║░░░██║░╚═══██╗██║░░██╗██╔══██║██║╚██╔╝██║██║██║╚████║██╔══██║░╚═══██╗")
 print("██████╦╝╚██████╔╝██████╔╝╚█████╔╝██║░░██║██║░╚═╝░██║██║██║░╚███║██║░░██║██████╔╝")
 print("╚═════╝░░╚═════╝░╚═════╝░░╚════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═╝╚═╝░░╚══╝╚═╝░░╚═╝╚═════╝░")
 print("")
-
 tablero_partida()
-
-
-###### PASO 3: Eleccion de las cordenadas que quieres destapar.
+# PASO 3: Eleccion de las cordenadas que quieres destapar.
 
 def destapar_celda(i,j):
     # Creamos un contador de minas que es el que saldra por pantalla en la celda
@@ -140,41 +137,42 @@ def destapar_celda(i,j):
     z = i-1                     # z seria 2
     while z <= i+1:             # i+1 sera el rango maximo que podremos obtener en las filas este caso 4 (nos coincide con la linea de arriba)
         if z>=-2 and z<=10:      # sabemos que tenemos 10 filas asi q usaremos el if para pasar a verificar las columnas
-            b = j-1             # igual queu antes b sera 3
+            b = j-1             # igual que antes b sera 3
             while b <= j+1:     # el maximo de las columnas sera 5 que tambien coincide
                 if b>=-2 and b<=10:
                     minas = minas+tablero_minas[z][b]                   # Este if sera el que verifica si en el tablero que el usuario no ve 
                     b= b+1 # Incrementamos b para verificar la          # y en el que esta las minas si en la cordenada hay un 0 o un 1 y lo 
                            #siguiente coordenada de celda               # incrementa asi sabemos si hay alrededor.
-        z = z+1 # Incremnta z para verificar otra coordenada.
+        z = z+1 # Incrementa z para verificar otra coordenada 
                                              
-    return minas # Devuelve el valor final de minas.
+    return minas # Devuelve el valor final de minas 
 
-
-###### Paso 4. Elección de celda.
-
+# Paso 4. Elección de celda.
 def jugar():
-    eleccion_cordenada = 0              # Contador de las veces que ha salido una coordenada.
-    contador_celdas = 0                 # Contador para dar la victoria de la partida.
-    while eleccion_cordenada < (100 - n_minas):                     # Bucle para pedir el valor de las coordenas que queremos elegir.
-     i=int(input("Señala una fila del (1 al 10('0')): "))-1         # Elegir fila con coordenadas 1,2,3,4,5,6,7,8,9 y 0 que representa el 10.
-     j=int(input("Señala una columna del (1-10('0')): "))-1 
-     print("")                                                      # Elegir fila con coordenadas 1,2,3,4,5,6,7,8,9 y 0 que representa el 10.
-     if tablero_minas[i][j] == 1:                           
-            print("")
-            print("¡¡LA MINA HA EXPLOTADO!! Has Perdido.")      # Si la coordenada que elegimos en el \tablero minas\ es un 1 significa que es un mina 
-            print("")                                           # y que hemos perdido.
-            tablero_derrota()
-            break
-     elif contador_celdas == 80:
-        print("ERES EL GANADOR, FELICIDADES!!!")  ###### Paso final.  Si conseguimos detapar las 80 casillas que no son una mina ganamos la partida.
-        break
-     else:                                         
-        tablero_juego[i][j]= destapar_celda(i,j)  ###### Paso 5. Destapar celda sera la funcion que nos dara el numero de minas que hay al rededor.
-        tablero_partida()
-        contador_celdas = contador_celdas+1
-
-
-    # INICIAR EL JUEGO
-jugar()
     
+    eleccion_cordenada = 0
+    contador_celdas = 0
+    
+    while eleccion_cordenada < (100 - n_minas):
+            print("")
+            i=int(input("Señala una fila del (1 al 10('0')): "))-1     # De forma predeterminada empieza a contar a partir del número 0,                                                   
+            j=int(input("Señala una columna del (1-10('0')): "))-1     # así que ponemos un -1 para que empiece a contar a partir del número 1.
+            print("")
+
+            if tablero_minas[i][j] == 1:                               
+                    print("")
+                    print("¡¡LA MINA HA EXPLOTADO!! Has Perdido.")
+                    print("")
+                    tablero_derrota()
+                    break
+            elif contador_celdas == 80:
+                print("ERES EL GANADOR, FELICIDADES!!!")
+                break
+            else:                                         
+                tablero_juego[i][j]= destapar_celda(i,j)  # Paso 5. Destapar celda sera la funcion que nos dara el numero de minas que hay al rededor.
+                tablero_partida()
+                contador_celdas = contador_celdas+1
+            
+    
+jugar()
+
