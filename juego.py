@@ -61,8 +61,8 @@ while n_minas_puestas < n_minas:
 
 # Función que nos permite ver en que posición estan las minas. 
 def tablero_invisible():
-    for i in range(0,10):
-        for j in range(0,10):
+    for i in range(1,10):
+        for j in range(1,10):
             print(tablero_minas[i][j], end=" ")
         print("")
 
@@ -75,14 +75,14 @@ def tablero_partida():
     n_fila = 1
     print("     1   2   3   4   5   6   7   8   9   10")     # Este print marca la enumeración de cada columna
     print("    ----------------------------------------")    # Marca la separación y mejora gráficamente las filas del tablero.
-    for i in range(0,10):
+    for i in range(1,10):
         if n_fila != 10:                        # Al cambiar el digito a dos ej:10 se deplaza toda la estrucutra
             print(n_fila," | ", end="")         # a la derecha una posicion, para que eso no pase esta este if. El cual los suprime.
             n_fila = n_fila + 1
         else:
             n_fila==10
             print(n_fila,"| ", end="")
-        for j in range(0,10):
+        for j in range(1,10):
             if tablero_juego[i][j]=="X":        # 
                 print("·", end=" | ")
             else:    
@@ -97,14 +97,14 @@ def tablero_derrota():
     n_fila = 1
     print("     1   2   3   4   5   6   7   8   9   10")     # Este print marca la enumeración de cada columna
     print("    ----------------------------------------")    # Marca la separación y mejora gráficamente las filas del tablero.
-    for i in range(0,10):
+    for i in range(1,10):
         if n_fila != 10:                        # Al cambiar el digito a dos ej:10 se deplaza toda la estrucutra
             print(n_fila," | ", end="")         # a la derecha una posicion, para que eso no pase esta este if. El cual los suprime.
             n_fila = n_fila + 1
         else:
             n_fila==10
             print(n_fila,"| ", end="")
-        for j in range(0,10):
+        for j in range(1,10):
             if tablero_explosion[i][j]==1:        # Cuando el tablero detecte un 1 (mina) me printeará un asterisco
                 print("*", end=" | ")
                 continue                            
