@@ -99,74 +99,74 @@ Paso Por Paso
 
 En esta parte se marcan todos los errores y sus procesos para solucionarlos.
 
-#### Fallo 
+### Fallo 
 
 Teníamos una estructura del tablero que era la que el usuario tenía que ver, pero al numerar las filas y las columnas con el número "10" utilizaba un carácter de más esa fila y desplazaba toda la estructura.
 
-#### Solución
+### Solución
 
 Dentro del for hacer un if y cuando el número fuera un "10" elimina los espacios que hacía en las barras "|" que separan las casillas.
 
-#### Fallo
+### Fallo
 
 El cartel de buscaminas no entraba todo en un print, dando error.
 
-#### Solución 
+### Solución 
 
 Crear diferentes prints con cada linea.
 
-#### Fallo
+### Fallo
 
 En el proceso "destapar_celda" utilizamos la "z" como fila y la "b" como en los if, pusimos rango 0-10 lo cual nos limitaba y al querer verificar si en las posiciones de al rededor de la columna 1 había una mina, daba error ya que estaba fuera del rango de la matriz y no se podía seleccionar.
 
-#### Solución 
+### Solución 
 
 Cambiar el rango del if por uno mayor "-1 and 10".
 
-#### Fallo 
+### Fallo 
 
 Ocurria lo mismo con la columna 10.
 
-#### Solución 
+### Solución 
 
 Volver a aumentar el rango.
 
-#### Fallo 
+### Fallo 
 
 Al pedir al usuario la fila y la columna ya dentro del juego si el ponía un 1-1 la casilla que se mostraba era la 2-2.
 
-#### Solución
+### Solución
 
 Poner un -1 al final de cada input.
 
-#### Fallo
+### Fallo
 
 No encotramos la manera de mostrar la victoria.
 
-#### Solución 
+### Solución 
 
 Implementar un contador y cuando el usuario destapé el maximo de celdas "80" mostrar que ha ganado
 
-#### Fallo
+### Fallo
 
 La estructura del juego no quedaba del todo clara.
 
-#### Solución
+### Solución
 
 Dedicarnos a poner todo dentro de funciones y hacer una general que fuese el juego.
 
-#### Fallo
+### Fallo
 
 Al querer mostrar al usuario el tablero con todas la minas unas vez falla y explota una mina, el tablero que mostraba era el mismo con el que el sistema verificaba las coordenadas.
 
-#### Solución
+### Solución
 
 Crear una sublista la cual es la que printeamos de forma bonita.
 
-#### Fallo
+### Fallo
 
 El import random no seleccionaba la cantidad que queriamos.
 
-#### Solución 
+### Solución 
 
 Aplicar un contador.
