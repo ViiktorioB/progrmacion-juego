@@ -56,45 +56,6 @@ Paso Por Paso
 6. En caso de descubrir en qué coordenadas están todas las minas y tener todo el tablero al descubierto, ganaríamos el juego.
 
 
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
 ## Creación del documento TEP
 
 1- Importar libreria random.
@@ -129,7 +90,6 @@ Paso Por Paso
 11- Crear función destapar_celda (nº de minas alrededor).
 
 12- Crear funcion jugar, donde para ganar se han de destapar "100 - n_minas" celdas (son 100 ya que el tablero es un 10x10).
->>>>>>> parte_mateu
 
 
 ## Creación del documento PCE
@@ -180,11 +140,7 @@ Poner un -1 al final de cada input.
 
 No encotramos la manera de mostrar la victoria.
 
-<<<<<<< HEAD
-### Solución 
-=======
 ### Solución 
->>>>>>> parte_mateu
 
 Implementar un contador y cuando el usuario destapé el maximo de celdas "80" mostrar que ha ganado
 
@@ -210,8 +166,4 @@ El import random no seleccionaba la cantidad que queriamos.
 
 ### Solución 
 
-<<<<<<< HEAD
 Aplicar un contador.
-=======
-Aplicar un contador.
->>>>>>> parte_mateu
