@@ -43,7 +43,7 @@ Primero cabe aclarar que le juego es de una persona contra la máquina.
 
 Paso Por Paso
 
-1. Se genera una tabla de (10x10), (20x20)... o tamaño que se escoja.
+1. Se genera una tabla de (10x10).
 
 2. Dentro de esta tabla se generan 10,20... minas que son las que tenemos que ubicar para ganar el juego.
 
@@ -54,3 +54,231 @@ Paso Por Paso
 5. Una vez pasado esto volveríamos a escoger una coordenada y volveríamos al paso 4.
 
 6. En caso de descubrir en qué coordenadas están todas las minas y tener todo el tablero al descubierto, ganaríamos el juego.
+
+
+## Creación del documento TEP
+
+1- Importar libreria random.
+
+2- Crear lista tablero minas.
+
+3- Crear lista tablero juego.
+
+4- Crear lista auxiliar tablero explosion.
+
+5- Asignar el valor tablero_minas a tablero_explosion.
+
+6- Crear variable número_de_minas(máxima) y número de minas puestas(actuales).
+
+7- Asignar un valor random en i y en j con rango de 10.
+
+8- Crear función tablero_invisible (la que el usuario no verá pero nuestro código cogerá toda la información).
+
+    - Este tablero es de donde nuestro programa coge toda la información. 
+      (0 = No hay mina)
+      (1= Hay mina)
+
+9- Crear función tablero_partida (tablero que verá el usuario y con el que jugará la partida).
+
+    - Todas las celdas estarán marcadas con una misma tecla (ya sea # o · por ejemplo).
+
+
+10- Crear función tablero_derrota (tablero que aparecerá al perder).
+
+### Jugador 
+
+11- Crear función destapar_celda (nº de minas alrededor).
+
+12- Crear funcion jugar, donde para ganar se han de destapar "100 - n_minas" celdas (son 100 ya que el tablero es un 10x10).
+
+
+## Creación del documento PCE
+
+En esta parte se marcan todos los errores y sus procesos para solucionarlos.
+
+### Fallo 
+
+Teníamos una estructura del tablero que era la que el usuario tenía que ver, pero al numerar las filas y las columnas con el número "10" utilizaba un carácter de más esa fila y desplazaba toda la estructura.
+
+### Solución
+
+Dentro del for hacer un if y cuando el número fuera un "10" elimina los espacios que hacía en las barras "|" que separan las casillas.
+
+### Fallo
+
+El cartel de buscaminas no entraba todo en un print, dando error.
+
+### Solución 
+
+Crear diferentes prints con cada linea.
+
+### Fallo
+
+En el proceso "destapar_celda" utilizamos la "z" como fila y la "b" como en los if, pusimos rango 0-10 lo cual nos limitaba y al querer verificar si en las posiciones de al rededor de la columna 1 había una mina, daba error ya que estaba fuera del rango de la matriz y no se podía seleccionar.
+
+### Solución 
+
+Cambiar el rango del if por uno mayor "-1 and 10".
+
+### Fallo 
+
+Ocurria lo mismo con la columna 10.
+
+### Solución 
+
+Volver a aumentar el rango.
+
+### Fallo 
+
+Al pedir al usuario la fila y la columna ya dentro del juego si el ponía un 1-1 la casilla que se mostraba era la 2-2.
+
+### Solución
+
+Poner un -1 al final de cada input.
+
+### Fallo
+
+No encotramos la manera de mostrar la victoria.
+
+### Solución 
+
+Implementar un contador y cuando el usuario destapé el maximo de celdas "80" mostrar que ha ganado
+
+### Fallo
+
+La estructura del juego no quedaba del todo clara.
+
+### Solución
+
+Dedicarnos a poner todo dentro de funciones y hacer una general que fuese el juego.
+
+### Fallo
+
+Al querer mostrar al usuario el tablero con todas la minas unas vez falla y explota una mina, el tablero que mostraba era el mismo con el que el sistema verificaba las coordenadas.
+
+### Solución
+
+Crear una sublista la cual es la que printeamos de forma bonita.
+
+### Fallo
+
+El import random no seleccionaba la cantidad que queriamos.
+
+### Solución 
+
+Aplicar un contador.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Creación del documento PCE
+
+En esta parte se marcan todos los errores y sus procesos para solucionarlos.
+
+### Fallo 
+
+Teníamos una estructura del tablero que era la que el usuario tenía que ver, pero al numerar las filas y las columnas con el número "10" utilizaba un carácter de más esa fila y desplazaba toda la estructura.
+
+### Solución
+
+Dentro del for hacer un if y cuando el número fuera un "10" elimina los espacios que hacía en las barras "|" que separan las casillas.
+
+### Fallo
+
+El cartel de buscaminas no entraba todo en un print, dando error.
+
+### Solución 
+
+Crear diferentes prints con cada linea.
+
+### Fallo
+
+En el proceso "destapar_celda" utilizamos la "z" como fila y la "b" como en los if, pusimos rango 0-10 lo cual nos limitaba y al querer verificar si en las posiciones de al rededor de la columna 1 había una mina, daba error ya que estaba fuera del rango de la matriz y no se podía seleccionar.
+
+### Solución 
+
+Cambiar el rango del if por uno mayor "-1 and 10".
+
+### Fallo 
+
+Ocurria lo mismo con la columna 10.
+
+### Solución 
+
+Volver a aumentar el rango.
+
+### Fallo 
+
+Al pedir al usuario la fila y la columna ya dentro del juego si el ponía un 1-1 la casilla que se mostraba era la 2-2.
+
+### Solución
+
+Poner un -1 al final de cada input.
+
+### Fallo
+
+No encotramos la manera de mostrar la victoria.
+
+### Solución 
+
+Implementar un contador y cuando el usuario destapé el maximo de celdas "80" mostrar que ha ganado
+
+### Fallo
+
+La estructura del juego no quedaba del todo clara.
+
+### Solución
+
+Dedicarnos a poner todo dentro de funciones y hacer una general que fuese el juego.
+
+### Fallo
+
+Al querer mostrar al usuario el tablero con todas la minas unas vez falla y explota una mina, el tablero que mostraba era el mismo con el que el sistema verificaba las coordenadas.
+
+### Solución
+
+Crear una sublista la cual es la que printeamos de forma bonita.
+
+### Fallo
+
+El import random no seleccionaba la cantidad que queriamos.
+
+### Solución 
+
+Aplicar un contador.
