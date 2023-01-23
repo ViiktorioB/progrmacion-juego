@@ -56,6 +56,7 @@ Paso Por Paso
 6. En caso de descubrir en qué coordenadas están todas las minas y tener todo el tablero al descubierto, ganaríamos el juego.
 
 
+<<<<<<< HEAD
 
 
 
@@ -93,6 +94,42 @@ Paso Por Paso
 
 
 
+=======
+## Creación del documento TEP
+
+1- Importar libreria random.
+
+2- Crear lista tablero minas.
+
+3- Crear lista tablero juego.
+
+4- Crear lista auxiliar tablero explosion.
+
+5- Asignar el valor tablero_minas a tablero_explosion.
+
+6- Crear variable número_de_minas(máxima) y número de minas puestas(actuales).
+
+7- Asignar un valor random en i y en j con rango de 10.
+
+8- Crear función tablero_invisible (la que el usuario no verá pero nuestro código cogerá toda la información).
+
+    - Este tablero es de donde nuestro programa coge toda la información. 
+      (0 = No hay mina)
+      (1= Hay mina)
+
+9- Crear función tablero_partida (tablero que verá el usuario y con el que jugará la partida).
+
+    - Todas las celdas estarán marcadas con una misma tecla (ya sea # o · por ejemplo).
+
+
+10- Crear función tablero_derrota (tablero que aparecerá al perder).
+
+### Jugador 
+
+11- Crear función destapar_celda (nº de minas alrededor).
+
+12- Crear funcion jugar, donde para ganar se han de destapar "100 - n_minas" celdas (son 100 ya que el tablero es un 10x10).
+>>>>>>> parte_mateu
 
 
 ## Creación del documento PCE
@@ -143,7 +180,11 @@ Poner un -1 al final de cada input.
 
 No encotramos la manera de mostrar la victoria.
 
+<<<<<<< HEAD
 ### Solución 
+=======
+### Solución 
+>>>>>>> parte_mateu
 
 Implementar un contador y cuando el usuario destapé el maximo de celdas "80" mostrar que ha ganado
 
@@ -169,4 +210,8 @@ El import random no seleccionaba la cantidad que queriamos.
 
 ### Solución 
 
+<<<<<<< HEAD
 Aplicar un contador.
+=======
+Aplicar un contador.
+>>>>>>> parte_mateu
