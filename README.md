@@ -91,6 +91,26 @@ Paso Por Paso
 
 12- Crear funcion jugar, donde para ganar se han de destapar "100 - n_minas" celdas (son 100 ya que el tablero es un 10x10).
 
+## Creacion de CFF
+
+Para este proyecto hemos creado una lista llamada tablero_minas que nos sirve únicamente de apoyo, ya que el usuario nunca va a interactuar con ella, únicamente la usamos para recoger datos como donde estarán las minas por ejemplo. 
+
+Para agregar las minas al tablero usamos un bucle muy sencillo para que nos genere tanto posiciones random en i como en j.
+
+Definimos las funciones tablero_invisible (el que el usuario no verá), tablero_partida y tablero_derrota.
+
+La función destapar_celda es algo compleja, ya que con esta , comprobaremos las posibles minas cercanas alrededor de la celda que eligamos. 
+    
+               * x x 
+    -          * · x
+               x x *
+    
+    - "·" es la celda que hemos elegido.
+    - "*" son las minas de alrededor
+    - "x" es donde no hay minas
+    - En este caso, el número que nos devolvería seria 3.
+
+La función jugar se compone principalmente de dos inputs, donde dentro de un bucle llamado eleccion_cordenada donde mientras elección_cordenada sea menor que el total de celdas SIN MINA, se siga jugando. En este caso, para comprobar si hay minas o no (1 o 0), usaremos dos IFs, si es 1 , saltará que hemos perdido y se mostrará por pantalla la función tablero_derrota que antes hemos definido. Si nuestro contador_celdas llega a 80, el usuario ha ganado la partida.
 
 ## Creación del documento PCE
 

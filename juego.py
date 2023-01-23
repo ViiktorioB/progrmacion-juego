@@ -1,6 +1,6 @@
 # Tablero
 # Este es el primer paso, crear el tablero en el que se distibuiran las minas.
-# Debe de tener un tamaño incidado (10x10)ej.
+# Debe de tener un tamaño indicado (10x10)ej.
 
 # !!Esta parte se puede hacer de varias maneras la principal seria tener dos listas una de (apoyo) para saber donde estan las 
 # mina y otra que es la que el jugador vera por pantalla. Las tablas seras bases con tamaños pre-establecidas y en futuras
