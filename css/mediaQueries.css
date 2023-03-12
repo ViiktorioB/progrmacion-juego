@@ -1,0 +1,46 @@
+@media only screen and (max-width: 600px) {
+    .navbar .menu {
+        display: none;
+    }
+
+    .navbar {
+        position: relative;
+    }
+
+    .navbar .compras {
+        display: none;
+    }
+
+    .navbar .menu-bar {
+        display: block;
+        grid-column: 8/9;
+        font-size: 1.5em;
+    }
+
+    
+
+    .navbar .menu-lateral {
+        visibility: hidden;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgb(202, 202, 202);
+    }
+    .navbar .menu-bar:hover + .menu-lateral {
+        visibility: visible;
+        }
+
+    .navbar .menu-lateral li {
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .navbar .menu-lateral a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: gray;
+        cursor: pointer;
+    }
+}
