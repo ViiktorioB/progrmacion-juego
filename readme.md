@@ -11,7 +11,7 @@
 
 ### Utilitzar Flex box per maquetar els elements.   FET
 
-### Utilitzar Media Queries per a que almenys totes les pàgines puguin ser visualitzades a pantalles d'escriptori i telèfons mòbils amb disposicions diferents.   MENOR A 600px.
+### Utilitzar Media Queries per a que almenys totes les pàgines puguin ser visualitzades a pantalles d'escriptori i telèfons mòbils amb disposicions diferents.   FET a MENOR A 600px.
 
 ### Tamany de lletres amb unitats em.     FET
 
