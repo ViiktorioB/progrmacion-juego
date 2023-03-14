@@ -1,0 +1,46 @@
+@media only screen and (max-width: 600px) {
+    .navbar .menu {
+        display: none;
+    }
+
+    .navbar {
+        position: relative;
+    }
+
+    .navbar .compras { 
+        display: none;
+    }
+
+    .navbar .menu-bar {
+        display: block;
+        grid-column: 8/9;
+        font-size: 1.5em;
+    }
+
+    .navbar .menu-lateral {
+        
+        position: absolute; /* Sin esto no queda totalmente centrado el menu lateral*/
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgb(202, 202, 202);
+        
+      }
+    
+      .navbar .menu-lateral li {
+        text-align: center;
+        margin: 10px 0;
+      }
+    
+      .navbar .menu-lateral a {
+        padding: 10px;
+        text-decoration: none;
+        color: gray;
+        cursor: pointer;
+      }
+    
+      .navbar:hover .menu-lateral {
+        display: block; /* con esto hace que aparezca el menu lateral */
+      }
+}
+

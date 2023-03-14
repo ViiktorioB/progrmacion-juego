@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+/* el codigo de arriba es para importar la fuente montserrat que queremos, ya que hay muchos tipos y en este caso queremos una en específico a nuestro gusto*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.body{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+.navbar{
+    background-color: rgb(202, 202, 202);
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    align-items: center;
+    font-size: 1.1em;
+
+    
+}
+
+.logo{
+    margin-left: 150px;
+    cursor: pointer;
+    height: 150px;
+    width: 210px;
+    opacity: 0.5;
+    /*grid-column: 2;   Aquí en el momento que le he enlazado el INDEX.HTML a la foto. el Display grid me ha dejado de funcionar y no se realmente por que. Así que comento esta linea y añado
+                        un margin a mi gusto */
+     
+    
+    
+
+}
+@keyframes animacion-logo {
+  0% {
+    transform: scale(1);
+  }
+  
+  50%{
+    transform: scale(1.3);
+  }
+
+  100%{
+    transform: scale(1.3);
+  }
+  
+}
+
+.logo:hover{
+  animation: animacion-logo 1s infinite;
+}
+
+.navbar .menu{
+    grid-column: 3/7;  
+    display: flex; /* para que nuestro menu esté en horizontal (home, galeria contacot..) */
+    justify-content: space-around;
+}
+
+.navbar .menu li{
+    list-style: none;  /* le quitamos los puntos que nos muestra al hacer la lista */
+}
+
+.navbar .menu a{
+    text-decoration: none;  /* le quitamos el subrayado de decoración */
+    color: gray;
+    cursor: pointer;
+}
+.navbar .menu a:hover{
+    color: white;
+}
+
+.navbar .menu-bar{
+    display: none; /* Esto lo hacemos ya que queremos que este menu desp`legable solo esté disponible en MOVILES */
+    cursor: pointer;
+}
+.img-compras{
+    height: 20px;
+    width: 20px;
+    grid-column: 8/9;
+    cursor: pointer;
+}
+
+.img-menu{
+    height: 20px;
+    width: 20px;
+
+}
+
+.menu-lateral{
+    display: none;
+}
+
+
+
+footer{
+    float: right;
+    margin-right: 10px;
+}
+
+/* Seccion del MAIN */
+
+.main1{
+    height: 80vh;
+    background-image: linear-gradient(rgba( 16,16,16,.8) , rgba(6,16,16, .8)), url("/img/Audi_2018_e-tron_GT.jpg");  /* Metemos algo de transparencia al fondo */
+    background-size: cover;
+    display: grid;
+    max-width: 100%;
+    grid-template-columns: repeat(15,1fr); /* Lo separamos en columnas para poder manejar mejor el contenido */
+    grid-template-rows: repeat(8,1fr);
+    
+    
+
+ 
+}
+
+.main1 .contenido{
+    grid-column: 7/10;
+    grid-row: 2/10;
+    text-align: center;
+    color: white;
+    
+}
+
+.main1 h3{
+    font-family: 'Montserrat';
+    color: black;
+    margin-bottom: 5px;
+
+}
+
+.main1 h4,p {
+    color: grey;
+    font-family: 'Montserrat';
+}
+
+@keyframes animacion-boton {
+  0% {
+    transform: scale(1);
+  }
+  
+  50%{
+    transform: scale(1.2);
+  }
+
+  100%{
+    transform: scale(1);
+  }
+  
+}
+.main1 .boton{
+    font-size: 1em;
+    background: none;
+    padding: 10px 20px;
+    border: 1px solid;
+    border-radius: 15px;
+    margin-top: 12px;
+}
+
+.main1 .boton:hover{
+  animation: animacion-boton 1s;
+}
+
+.main1 .boton:hover{
+    color: white;
+    background-color: gray;
+}
+
+
+
+/* Formulario */
+
+.fondo{
+    
+    background-image: linear-gradient(rgba( 16,16,16,.8) , rgba(6,16,16, .8)), url("/img/Audi_2018_e-tron_GT.jpg");  /* Metemos algo de transparencia al fondo */
+    
+}
+
+.formulario{
+    width: 300px;
+    height: 450px;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    color: white;
+    border-radius: 10px;
+}
+
+.formulario h4{
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: beige;        
+
+    
+}
+
+.texto{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 26px;
+    background: beige;
+    border: 1px solid red;
+}
+
+
+
+.contenedor-genero label{
+    margin-right: 65px;
+    
+   
+    
+    
+}
+.contenedor-enviar-reset{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+    
+}
+
+.informacion{
+    margin-top: 60px;
+    display: grid;
+    justify-content: center;
+
+}
+
+
+/* GALERIA1 DE FOTOS AUDI */
+header,body{
+    background-image: linear-gradient(rgba( 16,16,16,.8) , rgba(6,16,16, .8)), url("/img/Audi_2018_e-tron_GT.jpg");
+}
+
+.galeria {
+    
+    margin-top: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .item {
+    width: 300px;
+  }
+  
+  .item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;   /* Para cubrir todo el espacio */
+  }
+  @keyframes galeria1 { /* Creamos una animacion para la primera galeria */
+    0% {
+      transform: scale(1);
+    }
+    
+    50%{
+      transform: scale(1.2);
+    }
+
+    100%{
+      transform: scale(1);
+    }
+  }
+  
+  .item:hover{
+    animation: galeria1 3s;
+    
+  }
+  .item p {
+    margin: 10px 0;
+  }
+
+
+  /* GALERIA2 DE FOTOS AUDI */
+
+  .galeria2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* espacio entre fotos */
+  }
+  
+  .item2 {
+    width: 100%;
+  }
+  
+  .item2 img {
+    padding-top: 10px;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    
+    
+  }
+
+  @keyframes galeria2 { /* Creamos una animacion para la segunda galeria */
+    0% {
+      transform: scale(1);
+    }
+    
+    50%{
+      transform: scale(1.2);
+    }
+
+    100%{
+      transform: scale(1);
+    }
+  }
+
+  .item2:hover{
+    animation: galeria2 3s;
+    
+    
+  }
+  /* TABLA PRECIOS */
+
+  @keyframes animacion-tabla { /* Creamos una animacion para la segunda galeria */
+    0% {
+      transform: scale(1);
+    }
+    
+    50%{
+      transform: scale(1.2);
+    }
+
+    100%{
+      transform: scale(1);
+    }
+  }
+
+  .principal{
+    margin: 0 auto;
+    margin-top: 280px;
+    
+    
+    
+  }
+  .principal:hover{
+    animation: animacion-tabla 30s;
+  }
+  
+
+  .encabezado{
+    background-color: rgba(73, 10, 10, 0.8);
+  }
+
+  table {
+    width: 80%; /* No queeremos que ocupe toda la página */
+    
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #555;
+    color: #fff;
+  }
+  
+  
+  
+  tr{
+    background-color: #555;
+    opacity: 0.7;
+  }
+  .fila-arriba {
+    background-color: #f2f2f2;
+  }
